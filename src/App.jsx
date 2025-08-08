@@ -12,11 +12,7 @@ function App() {
         <h2>Accurate rates. Instant conversions.</h2>
         <form className="relative flex bg-purple-400 ">
           <div className="flex p-2 h-20 border border-green-300">
-            <Label
-              htmlFor="input-label"
-              className={`border border-slate-500 h-12`}
-              children={"Rupee"}
-            />
+            <Label htmlFor="title" text="Title *" />
             <Input
               className={`border border-slate-500`}
               id="input-label"

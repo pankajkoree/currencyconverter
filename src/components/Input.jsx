@@ -1,13 +1,13 @@
-export const Input = ({ className, id, type, value, onChange }) => {
+export const Input = ({ id, name, type, placeholder, value, onChange }) => {
   return (
-    <div>
-      <input
-        className={className}
-        id={id}
-        type={type}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
+    <input
+      id={id}
+      name={name}
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      className={`w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm xl:text-xl`}
+    />
   );
 };
