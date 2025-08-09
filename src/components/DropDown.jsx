@@ -1,4 +1,4 @@
-export const Dropdown = ({ id, name, value, onChange, options, placeholder }) => {
+export const DropDown = ({ id, name, value, onChange, options, placeholder }) => {
   return (
     <select
       id={id}

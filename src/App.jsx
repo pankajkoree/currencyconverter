@@ -1,7 +1,16 @@
-import { Label } from "../src/components/Label";
 import { Input } from "../src/components/Input";
+import { DropDown } from "../src/components/DropDown";
+import { useState } from "react";
 
 function App() {
+  const [selectedCurrency, setSelectedCurrency] = useState("");
+
+  const data = [
+    { value: "np", label: "Nepal" },
+    { value: "in", label: "India" },
+    { value: "us", label: "USA" },
+  ];
+
   const changValue = () => {
     console.log("object");
   };
@@ -12,13 +21,19 @@ function App() {
         <h2>Accurate rates. Instant conversions.</h2>
         <form className="relative flex bg-purple-400 ">
           <div className="flex p-2 h-20 border border-green-300">
-            <Label htmlFor="title" text="Title *" />
             <Input
-              className={`border border-slate-500`}
-              id="input-label"
+              id="fromInput"
               type="text"
               value="not now"
               onChange={changValue}
+            />
+            <DropDown
+              id="fromDropDown"
+              name="fromDropDown"
+              value={selectedCurrency}
+              onChange={(e) => setSelectedCurrency(e.target.value)}
+              placeholder="From Default currency"
+              options={data}
             />
           </div>
         </form>
