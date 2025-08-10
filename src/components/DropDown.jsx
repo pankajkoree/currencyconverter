@@ -1,4 +1,11 @@
-export const DropDown = ({ id, name, value, onChange, options, placeholder }) => {
+export const DropDown = ({
+  id,
+  name,
+  value,
+  onChange,
+  options,
+  placeholder,
+}) => {
   return (
     <select
       id={id}
@@ -13,8 +20,8 @@ export const DropDown = ({ id, name, value, onChange, options, placeholder }) =>
         </option>
       )}
       {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
+        <option key={option.country} value={option.currency}>
+          {`${option.currency}`}
         </option>
       ))}
     </select>
