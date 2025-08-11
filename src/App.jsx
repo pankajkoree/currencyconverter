@@ -277,7 +277,7 @@ function App() {
                 name="toDropDown"
                 value={selectedCurrency}
                 onChange={(e) => setSelectedCurrency(e.target.value)}
-                placeholder="To Default currency"
+                placeholder="To"
                 options={data}
               />
             </div>
