@@ -243,43 +243,58 @@ function App() {
     console.log("object");
   };
   return (
-    <div className="relative flex justify-center w-full">
-      <div className="relative flex flex-col items-center xl:w-[40%] bg-amber-300">
-        <h1>Currency converter</h1>
-        <h2>Accurate rates. Instant conversions.</h2>
-        <form className="relative flex bg-purple-400 ">
+    <div className="relative flex justify-center w-full text-xl">
+      <div className="relative flex justify-center md:w-[70%] lg:w-[40%] top-20 md:top-50 p-4">
+        <form className="relative flex flex-col items-center">
+          <h1 className="md:text-3xl lg:text-4xl">Currency converter</h1>
+          <h2 className="md:text-2xl lg:text-3xl">
+            Accurate rates. Instant conversions.
+          </h2>
           <div className="flex flex-col p-2">
-            <div className="flex p-2 h-20 gap-2">
-              <Input
-                id="fromInput"
-                type="text"
-                value="not now"
-                onChange={changValue}
-              />
-              <DropDown
-                id="fromDropDown"
-                name="fromDropDown"
-                value={selectedCurrency}
-                onChange={(e) => setSelectedCurrency(e.target.value)}
-                placeholder="From Default currency"
-                options={data}
-              />
+            <div className="lg:flex md:gap-8 mt-8">
+              <div className="mb-2">
+                <Input
+                  id="fromInput"
+                  type="text"
+                  value="not now"
+                  onChange={changValue}
+                />
+              </div>
+              <div>
+                <DropDown
+                  id="fromDropDown"
+                  name="fromDropDown"
+                  value={selectedCurrency}
+                  onChange={(e) => setSelectedCurrency(e.target.value)}
+                  placeholder="From Default currency"
+                  options={data}
+                />
+              </div>
             </div>
-            <div className="flex p-2 h-20 gap-2">
-              <Input
-                id="toInput"
-                type="text"
-                value="not now"
-                onChange={changValue}
-              />
-              <DropDown
-                id="toDropDown"
-                name="toDropDown"
-                value={selectedCurrency}
-                onChange={(e) => setSelectedCurrency(e.target.value)}
-                placeholder="To"
-                options={data}
-              />
+            <div className="flex justify-center p-2">
+              <button className="flex justify-center text-center border px-4 py-2 hover:cursor-pointer">
+                Swap
+              </button>
+            </div>
+            <div className="lg:flex md:gap-8">
+              <div className="mb-2">
+                <Input
+                  id="fromInput"
+                  type="text"
+                  value="not now"
+                  onChange={changValue}
+                />
+              </div>
+              <div>
+                <DropDown
+                  id="fromDropDown"
+                  name="fromDropDown"
+                  value={selectedCurrency}
+                  onChange={(e) => setSelectedCurrency(e.target.value)}
+                  placeholder="From Default currency"
+                  options={data}
+                />
+              </div>
             </div>
           </div>
         </form>
