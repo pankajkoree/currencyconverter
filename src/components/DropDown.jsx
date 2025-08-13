@@ -3,7 +3,6 @@ export const DropDown = ({
   name,
   value,
   onChange,
-  options,
   placeholder,
 }) => {
   return (
@@ -19,11 +18,7 @@ export const DropDown = ({
           {placeholder}
         </option>
       )}
-      {options.map((option) => (
-        <option key={option.country} value={option.currency}>
-          {`${option.currency}`}
-        </option>
-      ))}
+      
     </select>
   );
 };

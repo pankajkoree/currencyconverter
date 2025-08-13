@@ -3,7 +3,8 @@ import { DropDown } from "../src/components/DropDown";
 import { useState } from "react";
 
 function App() {
-  const [selectedCurrency, setSelectedCurrency] = useState("");
+  const [fromCurrency, setFromCurrency] = useState("United States Dollar");
+  const [toCurrency, setToCurrency] = useState("Nepal Rupee");
 
   const data = [
     { country: "Algeria", currency: "Algerian Dinar", code: "DZD" },
@@ -239,8 +240,12 @@ function App() {
     { country: "Venezuela", currency: "Bolivar", code: "VEF" },
   ];
 
+
+ 
   const changValue = () => {
-    console.log("object");
+    data.map((option) => {
+      console.log(option.currency);
+    })
   };
   return (
     <div className="relative flex justify-center w-full text-xl">
@@ -264,10 +269,8 @@ function App() {
                 <DropDown
                   id="fromDropDown"
                   name="fromDropDown"
-                  value={selectedCurrency}
-                  onChange={(e) => setSelectedCurrency(e.target.value)}
-                  placeholder="From Default currency"
-                  options={data}
+                  value={fromCurrency}
+                  onChange={(e) => setFromCurrency(e.target.value)}
                 />
               </div>
             </div>
@@ -289,10 +292,8 @@ function App() {
                 <DropDown
                   id="fromDropDown"
                   name="fromDropDown"
-                  value={selectedCurrency}
-                  onChange={(e) => setSelectedCurrency(e.target.value)}
-                  placeholder="From Default currency"
-                  options={data}
+                  value={toCurrency}
+                  onChange={(e) => setToCurrency(e.target.value)}
                 />
               </div>
             </div>
